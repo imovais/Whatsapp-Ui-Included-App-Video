@@ -1,6 +1,10 @@
-import 'package:flutter/material.dart';
+// ignore_for_file: non_constant_identifier_names
 
-Widget whatsapp_chat_list({required name, required msg, imageUrl}) {
+import 'package:flutter/material.dart';
+import 'package:flutter_class_010423/custom_widgets/chat_screen/notification_circle.dart';
+
+Widget whatsapp_chat_list(
+    {required name, required msg, notification_count = '1', imageUrl}) {
   return ListTile(
     leading: CircleAvatar(
       backgroundImage: imageUrl == null
@@ -14,15 +18,14 @@ Widget whatsapp_chat_list({required name, required msg, imageUrl}) {
     ),
     subtitle: Text(msg),
     trailing: Column(
-      children: const [
-        Text(
-          '2:40',
-          style: TextStyle(color: Colors.teal),
+      crossAxisAlignment: CrossAxisAlignment.end,
+      children: [
+        const Text(
+          '02:40PM',
+          style: TextStyle(
+              color: Colors.teal, fontSize: 11, fontWeight: FontWeight.w600),
         ),
-        Icon(
-          Icons.circle,
-          color: Colors.teal,
-        )
+        notification_circle(notification_count)
       ],
     ),
   );

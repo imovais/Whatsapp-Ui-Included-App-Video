@@ -16,6 +16,7 @@ class HomeView extends StatelessWidget {
             custom_container(Colors.red, "Hello Zuhaib"),
             custom_container(Colors.blue, "Hello Danish"),
             custom_container(Colors.grey, "Hello Jawaz"),
+            
           ],
         ),
       ),
